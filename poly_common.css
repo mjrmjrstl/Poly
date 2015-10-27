@@ -11,6 +11,7 @@ body{
     height: 100%;
     overflow-y: auto;
     background-color: #06c7ff;
+    border-right:3px solid #0a88ac;
 }
 p.title{
 	font-size: 2em;
@@ -48,16 +49,16 @@ p.sub{
 .cta{
 	width:100px;
 	padding:0.7em;
-	background-color: #da7410;
+	background-color: #bf3b3f;
 	color:#fff;
 	font-family: helvetica;
 	font-size: 18px;
 	text-align: center;
-	margin:1em 0;
-	border-radius: 3px;
+	margin:1em 0 0 0;
+	border-radius: 3px 3px 0 0;
 }
 .cta:hover{
-	background-color: #c1670e;
+	background-color: #a23336;
 }
 /*input controllers*/
 input[type="text"] {
