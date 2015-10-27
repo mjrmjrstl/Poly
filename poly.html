@@ -5,32 +5,51 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <link rel="stylesheet" href="ui/SyntaxHilighter/atelier-plateau.dark.css">
     <script src="ui/SyntaxHilighter/highlight.pack.js"></script>
+    <script src="clipboard.min.js"></script>
         
     <link rel="stylesheet" href="poly_common.css">
   </head>
   <body style="margin:0px;" ng-app>
 <div class="left_nav">
-	<img class="logo" src="ui/poly_icon.svg" alt="">
-	<p class="title">poly.js</p>
+    <a class="anchors" href="index_poly.html">
+    	<img class="logo" src="ui/poly_icon.svg" alt="">
+    	<p class="title">poly.js</p>
+    </a>    
+    
     <div class="theContent">      
      <ul class="input-list style-4 clearfix">
+            <p class="sub">Total Hockey Email Template v1</p>
     <li>
-    	<p class="sub">link</p>
-      <input type="text" ng-model="main_link" placeholder="Enter main link here..." placeholder="insert main link">
+      <input type="text" ng-model="main_title" placeholder="Enter alt text here..." placeholder="Enter alt text here...">
+    </li>            
+    <li>
+      <input type="text" ng-model="main_link" placeholder="Enter main link here..." placeholder="insert main link...">
     </li>
     <li>
-    	<p class="sub">image</p>
       <input type="text" ng-model="main_image" placeholder="enter main image link here..." placeholder="insert main image link">
     </li>
   </ul>
+<div class="cta">GET CODE</div>
+
    
-      
+<p class="version">Poly.js is the simplest example of angular.js you'll see this week! <br> Michael Reagan | v0.1.0</p>      
     </div>
 </div> 
 <!-- CONTENT-PRIMARY -->  
+<div class="code_contain">
+    <div class="theCode">
+        <pre  style="display: none">
+            <code class="html"></code>
+        </pre>
+    </div>
+
+    <div class="cta_copy" data-clipboard-target="#copy_text" style="display: none">COPY CODE</div>
+    <textarea id="copy_text"></textarea>
+   
+</div>
 <div class="content-primary">
-<div class="cta">GET CODE</div>
-	<div class="theCode"><pre><code class="html"></code></pre></div>
+
+	
 	<div id="output" class="content_primary_container">
 		<!-- output -->
 		<table align="center" border="0" cellpadding="0" cellspacing="0" style=
@@ -178,7 +197,7 @@
                 </td>
             </tr><!-- END TOP NAVIGATION --><!-- MAIN MARKETING MESSAGE -->
             <tr>
-                <td id="innerContent" align="center">
+                <td id="innerContent" align="center" >
                     <table align="center" border="0" cellpadding="0"
                     cellspacing="0" class="wrapper" style="width: 640px;">
                         <tbody>
@@ -189,22 +208,18 @@
                                     "width: 100%;">
                                         <tbody>
                                             <tr>
-                                                <!-- Main Marketing Message 640x900 jpg,png,gif. ALWAYS change Alt text to reflect message/deal/event. If the user agent has images displayed off, this text will still be readable. -->
                                                 <td width="640">
                                                     <a href=
-                                                    "{{main_link}}">
+                                                    "{{main_link}}" alt="{{main_title}}">
                                                     <img alt=
-                                                    "10% deals for Total Hockey"
+                                                    "{{main_title}}"
                                                     border="0" height="900"
                                                     src="{{main_image}}"
                                                     width="640"></a>
                                                 </td>
                                             </tr>
                                         </tbody>
-                                    </table><!-- End marketing image -->
-                                    <!-- Main Marketing Message | Copy goes here. If no copy is needed for an email, comment out this ENTIRE block, from before the <table> tag to after the </table> tag.
-                        -->
-                                    <!-- End Marketing Copy Message --><!-- Insert Dynamic Content -->
+                                    </table>
                                 </td>
                             </tr>
                         </tbody>
@@ -386,9 +401,21 @@ $( document ).ready(function() {
     var someHtmlString = $("#innerContent").html();
     // set the code text string:
     $("code").text(someHtmlString);
+    $("#copy_text").text(someHtmlString);
       $('pre code').each(function(i, block) {
         hljs.highlightBlock(block);
+        //copy to clipboard
+
       });
+      $( "pre" ).toggle( "fast" );
+      $( ".cta_copy" ).toggle( "fast" );
+    });
+$( ".cta_copy" ).click(function() {
+                    new Clipboard('.cta_copy', {
+                    target: function(trigger) {
+                    return trigger.nextElementSibling;
+                }
+            });
     });
 });
 </script>
