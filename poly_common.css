@@ -3,6 +3,15 @@ body{
 	color:#666;
 	font-family: verdana, helvetica;
 }
+.left_nav{
+	 position: fixed;
+    z-index: 10;
+    padding: 24px 24px 72px;
+    width: 300px;
+    height: 100%;
+    overflow-y: auto;
+    background-color: #06c7ff;
+}
 p.title{
 	font-size: 2em;
 	color:#fff;
@@ -11,7 +20,7 @@ p.title{
 	margin: 0.5em auto;
 	display: block;
 	padding:0 0 1em 0;
-	border-bottom:3px solid #10c0da;
+	border-bottom:3px solid #0a88ac;
 }
 p.sub{
 	font-size: 18px;
@@ -29,15 +38,6 @@ p.sub{
 	text-align: center;
 	width:50px;
 	height:50px;
-}
-.left_nav{
-	 position: fixed;
-    z-index: 10;
-    padding: 24px 24px 72px;
-    width: 300px;
-    height: 100%;
-    overflow-y: auto;
-    background-color: #33d8f0;
 }
 .content-primary {
     margin-left: 350px;
