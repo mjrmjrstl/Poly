@@ -3,17 +3,16 @@
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="jquery.popdown.min.js"></script>
+    <link rel="stylesheet" href="ui/SyntaxHilighter/solarized_dark.css">
+    <script src="ui/SyntaxHilighter/highlight.pack.js"></script>
+        
     <link rel="stylesheet" href="poly_common.css">
-    <link rel="stylesheet" href="jquery.popdown.css">
   </head>
   <body style="margin:0px;" ng-app>
 <div class="left_nav">
 	<img class="logo" src="ui/poly_icon.svg" alt="">
 	<p class="title">poly.js</p>
-    <div class="theContent">
-    	
-      
+    <div class="theContent">      
      <ul class="input-list style-4 clearfix">
     <li>
     	<p class="sub">link</p>
@@ -24,13 +23,13 @@
       <input type="text" ng-model="main_image" placeholder="enter main image link here..." placeholder="insert main image link">
     </li>
   </ul>
-  <div class="cta">GET CODE</div>
-      
+   
       
     </div>
 </div> 
 <!-- CONTENT-PRIMARY -->  
 <div class="content-primary">
+<div class="cta">GET CODE</div>
 	<div class="theCode"><pre><code></code></pre></div>
 	<div id="output" class="content_primary_container">
 		<!-- output -->
@@ -380,26 +379,17 @@
 	</div>
 </div>
 <script>
-$( ".cta" ).click(function() {
-	var escapeHtml = $( "#innerContent" ).html();
-function escapeHtml(text) {
-	
-  	var map = {
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#039;'
-  };
-
-  return text.replace(/[&<>"']/g, function(m) { return map[m]; });
-  $( "code" ).append( escapeHtml );
-}
-	
-	
-	/*
-	console.log( innerContent );*/
-  
+$( document ).ready(function() {
+        console.log( "ready!" );
+    $( ".cta" ).click(function() {
+    // get the innercontent set, get its html
+    var someHtmlString = $("#innerContent").html();
+    // set the code text string:
+    $("code").text(someHtmlString);
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });
 });
 </script>
   </body>
