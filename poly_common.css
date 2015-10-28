@@ -13,6 +13,13 @@ body{
     background-color: #06c7ff;
     
 }
+.confirm:after{
+    content: url("ui/confirmed_poly.svg");
+    display: inline-block;
+    position: relative;
+    margin-left: 10px;
+    bottom: -1px;
+}
 p.title{
 	font-size: 2em;
 	color:#fff;
@@ -34,8 +41,6 @@ p.version{
     bottom: 114px;
     margin: 0 auto;
     width: 85%;
-
-
 }
 p.sub{
 	font-size: 18px;
@@ -81,8 +86,10 @@ a.anchors{
 	margin:1em 0 0 0;
 	border-radius: 3px;
 }
-.cta:hover{
-	background-color: #a23336;
+.cta:active, .cta_copy:active{
+	background-color: #8e2c2f;
+	cursor: pointer;
+	padding:0.6em 0.7em 0.7em 0.6em;
 }
 .cta_copy{
 	margin:1em 1em;
@@ -157,4 +164,7 @@ textarea#copy_text{
     -moz-box-shadow: none;
     box-shadow: none;
     z-index: -99999;
+}
+.hljs {
+	overflow-x:hidden !important;
 }
