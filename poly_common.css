@@ -1,7 +1,7 @@
 body{
 	margin:0px;
 	color:#666;
-	font-family: verdana, helvetica;
+	font-family: "din_reg", "helvetica", "verdana", "sans-serif";
 }
 .left_nav{
 	 position: fixed;
@@ -10,9 +10,21 @@ body{
     width: 300px;
     height: 100%;
     overflow-y: auto;
-    background-color: #06c7ff;
+    background-color: #26C6DA;
+    border-right:1px solid rgba(0,0,0,0.1);
     
 }
+.margins{
+	margin:2em 0;
+}
+@font-face {
+      font-family:  "din_reg";
+        src: url("ui/f/DINWeb.woff") format("woff");
+    }
+@font-face {
+      font-family:  "din_med";
+        src: url("ui/f/DINWeb-Medium.woff") format("woff");
+    }
 .confirm:after{
     content: url("ui/confirmed_poly.svg");
     display: inline-block;
@@ -23,18 +35,18 @@ body{
 p.title{
 	font-size: 2em;
 	color:#fff;
-	font-family: helvetica;
+	font-family: "din_med", "helvetica", "verdana", "sans-serif";
 	text-align: center;
-	margin: 0.5em auto;
+	margin: 0 auto;
 	display: block;
-	padding:0.5em 0 1em 0;
- 	border-bottom: 3px solid #0a88ac;
+	padding:0.5em;
+ 	border-bottom: 3px solid #455A64;
 		
 }
 p.version{
     font-size: 0.5em;
-    border-top: 3px solid #0a88ac;
-    color: #fff;
+    border-top: 3px solid #455A64;
+    color: #455A64;
     padding: 1em 0 0.5em 0;
     text-align: center;
     position: absolute;
@@ -43,10 +55,21 @@ p.version{
     width: 85%;
 }
 p.sub{
-	font-size: 18px;
-	color:#fff;
-	font-family: helvetica;
+	font-size: 0.8em;
+	color:#455A64;
 	display: block;
+	line-height: 1.2em;
+}
+span.strong{
+	font-size: 1.3em;
+	font-family: "din_med", "helvetica", "verdana", "sans-serif";
+	margin:0.2em 0;
+}
+p.description{
+	font-size: 1em;
+	color:#455A64;
+	display: block;
+	margin:3px 0;
 }
 a.anchors{
 	text-decoration: none;
@@ -76,20 +99,21 @@ a.anchors{
     max-width: 1080px;
 }
 .cta, .cta_copy{
-	width:150px;
+	width:120px;
 	padding:0.7em;
-	background-color: #bf3b3f;
+	background-color: #455A64;
 	color:#fff;
-	font-family: helvetica;
+	font-family: "din_reg", "helvetica", "verdana", "sans-serif";
 	font-size: 18px;
 	text-align: center;
 	margin:1em 0 0 0;
 	border-radius: 3px;
+	cursor: pointer;
+	border-bottom:2px solid #263238;
 }
 .cta:active, .cta_copy:active{
-	background-color: #8e2c2f;
-	cursor: pointer;
-	padding:0.6em 0.7em 0.7em 0.6em;
+	background-color: #263238;
+	border-bottom:0px solid #263238;
 }
 .cta_copy{
 	margin:1em 1em;
@@ -99,8 +123,8 @@ input[type="text"] {
   display: block;
   margin: 0;
   width: 100%;
-  font-family: helvetica;
-  font-size: 18px;
+  font-family: "din_reg", "helvetica", "verdana", "sans-serif";
+  font-size: 1em;
   appearance: none;
   box-shadow: none;
   border-radius: none;
@@ -111,6 +135,21 @@ input[type="text"]:focus {
   outline: none;
   list-style-type:none;
   padding: 10px;
+}
+::-webkit-input-placeholder {
+   color: #e7e5e5;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #e7e5e5;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #e7e5e5;  
+}
+
+:-ms-input-placeholder {  
+   color: #e7e5e5;  
 }
 ul{
 	list-style: none;
@@ -124,13 +163,13 @@ li{
 .style-4 input[type="text"] {
   box-sizing: border-box;
   border: none;
-  border-bottom: solid 2px #c9c9c9;
+  border-bottom: solid 2px #999999;
   transition: border 0.3s;
   list-style-type:none;
 }
 .style-4 input[type="text"]:focus,
 .style-4 input[type="text"].focus {
-  border-bottom: solid 2px #da7410;
+  border-bottom: solid 2px #455A64;
   list-style-type:none;
 }
 .theCode{
@@ -167,4 +206,10 @@ textarea#copy_text{
 }
 .hljs {
 	overflow-x:hidden !important;
+}
+.sweet-alert input{
+	display:none;
+}
+.sweet-alert{
+	padding-bottom: 0px;
 }
