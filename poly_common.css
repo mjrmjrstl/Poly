@@ -25,6 +25,10 @@ body{
       font-family:  "din_med";
         src: url("ui/f/DINWeb-Medium.woff") format("woff");
     }
+@font-face {
+      font-family:  "din_iti";
+        src: url("ui/f/DINWeb-Ita.woff") format("woff");
+    }    
 .confirm:after{
     content: url("ui/confirmed_poly.svg");
     display: inline-block;
@@ -50,6 +54,7 @@ p.title.index{
 
 }
 span.sub_title{
+	font-family: "din_iti", "helvetica", "verdana", "sans-serif";	
 	font-size: 1.2rem;
 	color:#455a64;
 	line-height: 3em;
